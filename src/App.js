@@ -11,10 +11,10 @@ function App() {
   return (
     <>
       <h1>
-        CA's Client Lists
+        CA's Client Listsj
       </h1>
       <Form setInputText={setInputText} todos={todos} setTodos={setTodos} inputText={inputText}/>
-      <TodoList />
+      <TodoList todoArray = {todos}/>
     </>
   );
 }
