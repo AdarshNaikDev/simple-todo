@@ -22,7 +22,7 @@ const Form = ({setInputText, todos, setTodos, inputText})=>{
     return(
         <>
             <form >
-                <input type="text" value={inputText} onChange={inputTextHandler} placeholder="add client name"/>
+                <textarea rows={10} cols={20} value={inputText} onChange={inputTextHandler} placeholder="add a note"/>
                 <button type='submit' onClick={submitTodoHandler}>Add</button>
                 <div >
                 <select>
