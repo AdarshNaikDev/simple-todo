@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <h1>
-        CA's Client Listsj
+        Simple Todo List
       </h1>
       <Form setInputText={setInputText} todos={todos} setTodos={setTodos} inputText={inputText}/>
       <TodoList todos = {todos} setTodos = {setTodos}/>

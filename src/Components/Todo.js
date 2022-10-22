@@ -11,7 +11,19 @@ const Todo = ({idNo,text, ts, todo, todos, setTodos})=>{
         console.log(todo)
         setTodos(todos.filter((el)=>el.id !== todo.id))
     }
-
+    function completeHandler(){
+        setTodos(todos.map(item => {
+            if(item.id === todo.id)
+            {
+                return{
+                    ...item,
+                    completed: !item.completed
+            }
+            }
+            return item;
+        }))
+    }
+            
     return (
         <>
         <div>
@@ -21,7 +33,7 @@ const Todo = ({idNo,text, ts, todo, todos, setTodos})=>{
                 <h3>Title: {text}</h3>
                 <h3>Status: {String(ts)}</h3>
             </li>
-            <button>
+            <button onClick={completeHandler}>
                 check
             </button>
             <button onClick={deleteHandler}>
