@@ -14,7 +14,7 @@ function App() {
         CA's Client Listsj
       </h1>
       <Form setInputText={setInputText} todos={todos} setTodos={setTodos} inputText={inputText}/>
-      <TodoList todoArray = {todos}/>
+      <TodoList todos = {todos} setTodos = {setTodos}/>
     </>
   );
 }

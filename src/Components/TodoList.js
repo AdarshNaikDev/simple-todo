@@ -1,16 +1,23 @@
 import React from "react";
 import Todo from "./Todo";
-const TodoList =({todoArray})=>{
+const TodoList =({todos,setTodos})=>{
 
-    console.log({todoArray})
+   
 
     return(
         <div>
             {
-                todoArray.map((todo)=>{
+                todos.map((todo)=>{
                     return(
                             
-                     <Todo text ={todo.text}  idNo = {todo.id} ts ={todo.completed} key={todo.id} />
+                     <Todo
+                      text ={todo.text} 
+                       idNo = {todo.id} 
+                       ts ={todo.completed}
+                        key={todo.id}
+                        todos = {todos}
+                         setTodos = {setTodos}
+                        todo ={todo}/>
                     )
                     
                 })

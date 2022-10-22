@@ -1,10 +1,17 @@
 
 import React from "react";
 
-const Todo = ({idNo,text, ts})=>{
+const Todo = ({idNo,text, ts, todo, todos, setTodos})=>{
     const sumne = true;
+    
     //console.log("props in todo component")
-    console.log(ts)
+    //console.log(ts)
+
+    function deleteHandler(){
+        console.log(todo)
+        setTodos(todos.filter((el)=>el.id !== todo.id))
+    }
+
     return (
         <>
         <div>
@@ -17,7 +24,7 @@ const Todo = ({idNo,text, ts})=>{
             <button>
                 check
             </button>
-            <button>
+            <button onClick={deleteHandler}>
                 delete
             </button>
 
