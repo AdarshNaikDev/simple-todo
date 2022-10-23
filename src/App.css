@@ -57,7 +57,7 @@
 
 
 .todo-title-container {
-  background-color: #282a71;
+  background-color: #6318af;
   position: relative;
   top: 0;
   height: 5vw;
@@ -141,4 +141,11 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 
   padding: 20px;
+}
+
+.end-credits {
+  position: absolute;
+  top: 90%;
+  left: 43%;
+  font-weight: 500;
 }

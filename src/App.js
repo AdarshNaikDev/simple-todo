@@ -77,6 +77,7 @@ function App() {
           </div>
         </>
       ) : null}
+      <div className="end-credits">Built with ☕ and 💻 By Adarsh Naik ❤️</div>
     </>
   );
 }

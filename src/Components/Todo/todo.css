@@ -76,4 +76,5 @@
 
 .delete-btn button img {
     width: 20px;
+    cursor: pointer;
 }
