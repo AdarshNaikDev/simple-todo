@@ -14,7 +14,7 @@ const Form = ({setInputText, todos, setTodos, inputText, setStatus})=>{
         setTodos([
             ...todos , {text: inputText, completed: false, id:Math.random() * 1000}
         ])
-        console.log("print the array", todos)
+        //console.log("print the array", todos)
         setInputText("")
         
 

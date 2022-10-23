@@ -10,10 +10,38 @@ function App() {
   const[status,setStatus] = useState("all")
   const[filteredTodos, setFilteredTodos] = useState([])
 
+
+  useEffect(()=>{
+    console.log("to get from local storage")
+      getLocalTodos();
+  },[]);
+
   useEffect(()=>{
     console.log("hey")
-    filterHandler()
+    filterHandler();
+    saveLocalTodos();
   },[todos,status])
+
+ 
+
+  const saveLocalTodos=()=>{
+    localStorage.setItem("todos",JSON.stringify(todos))
+  }
+
+  const getLocalTodos = ()=>{
+    if(localStorage.getItem("todos") === null)
+    {
+      console.log("setitem run agtha ide")
+      localStorage.setItem("todos", JSON.stringify([]))
+    }
+    else
+    { 
+      console.log("parse hatra banthu")
+      let todoListFromLocal = JSON.parse(localStorage.getItem('todos'));
+      console.log("local stoarage",todoListFromLocal)
+      setTodos(todoListFromLocal)
+    }
+  }
   const filterHandler = ()=>{
    switch (status){
     case "completed":
