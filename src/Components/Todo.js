@@ -1,17 +1,18 @@
 
-import React from "react";
+import React,{useState} from "react";
 
 const Todo = ({idNo,text, ts, todo, todos, setTodos})=>{
     const sumne = true;
     
     //console.log("props in todo component")
     //console.log(ts)
-
+const [checkbtn, setCheckbtn]= useState("check")
     function deleteHandler(){
         console.log(todo)
         setTodos(todos.filter((el)=>el.id !== todo.id))
     }
     function completeHandler(){
+        checkbtn === "check"? setCheckbtn("uncheck"):setCheckbtn("check")
         setTodos(todos.map(item => {
             if(item.id === todo.id)
             {
@@ -34,7 +35,7 @@ const Todo = ({idNo,text, ts, todo, todos, setTodos})=>{
                 <h3>Status: {String(ts)}</h3>
             </li>
             <button onClick={completeHandler}>
-                check
+                {checkbtn}
             </button>
             <button onClick={deleteHandler}>
                 delete
