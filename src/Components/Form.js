@@ -1,13 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const Form = ({setInputText, todos, setTodos, inputText, setStatus})=>{
+const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
+  const inputTextHandler = (e) => {
+    setInputText(e.target.value);
+  };
 
-    const inputTextHandler =(e)=>{
-       
-        setInputText(e.target.value)
-        
-        
-    }
+
 
     const submitTodoHandler = (e) =>{
         e.preventDefault();
@@ -25,22 +23,29 @@ const Form = ({setInputText, todos, setTodos, inputText, setStatus})=>{
         setStatus(e.target.value)
     }
 
-    return(
-        <>
-            <form >
-                <textarea rows={10} cols={20} value={inputText} onChange={inputTextHandler} placeholder="add a note"/>
-                <button type='submit' onClick={submitTodoHandler}>Add</button>
-                <div >
-                <select onChange={statusHandler}>
-                    <option value="all">All</option>
-                    <option value= "completed">Completed</option>
-                    <option value="incomplete">InComplete</option>
-                </select>
+  return (
+    <>
+      <form>
+        <textarea
+          rows={10}
+          cols={20}
+          value={inputText}
+          onChange={inputTextHandler}
+          placeholder="add a note"
+        />
+        <button type="submit" onClick={submitTodoHandler}>
+          Add
+        </button>
+        <div>
+          <select onChange={statusHandler}>
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="incomplete">InComplete</option>
+          </select>
+        </div>
+      </form>
+    </>
+  );
+};
 
-                </div>
-            </form>
-        </>
-    )
-}
-
-export default Form
+export default Form;

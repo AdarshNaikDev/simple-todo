@@ -1,14 +1,14 @@
-import React,{useState, useEffect} from 'react';
-import './App.css';
-import Form from './Components/Form'
-import TodoList from './Components/TodoList';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Form from "./Components/Form";
+import TodoList from "./Components/TodoList";
 
 function App() {
-  const[inputText, setInputText] = useState("")
+  const [inputText, setInputText] = useState("");
 
-  const[todos, setTodos] = useState([])
-  const[status,setStatus] = useState("all")
-  const[filteredTodos, setFilteredTodos] = useState([])
+  const [todos, setTodos] = useState([]);
+  const [status, setStatus] = useState("all");
+  const [filteredTodos, setFilteredTodos] = useState([]);
 
 
   useEffect(()=>{
@@ -59,12 +59,21 @@ function App() {
 
   return (
     <>
-      <h1 className='todo-title'>
-        Simple Todo List
-      </h1>
-      <Form setInputText={setInputText} todos={todos} setTodos={setTodos} inputText={inputText} setStatus={setStatus}/>
-      <TodoList todos = {todos} setTodos = {setTodos} filteredTodos={filteredTodos}/>
-      
+      <div className="main-content">
+        <h1 className="todo-title">Simple Todo List</h1>
+        <Form
+          setInputText={setInputText}
+          todos={todos}
+          setTodos={setTodos}
+          inputText={inputText}
+          setStatus={setStatus}
+        />
+        <TodoList
+          todos={todos}
+          setTodos={setTodos}
+          filteredTodos={filteredTodos}
+        />
+      </div>
     </>
   );
 }
