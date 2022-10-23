@@ -49,6 +49,9 @@ function App() {
           />
         </div>
       </div>
+      <span className="create-task-btn">
+        <button className="create-btn">+</button>
+      </span>
       <div className="form-container">
         <Form
           setInputText={setInputText}

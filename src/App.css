@@ -43,7 +43,7 @@
   left: 25vw;
   top: 20vh;
   width: 50vw;
-  height: 60vh;
+  height: 58vh;
 
   display: flex;
   flex-direction: column;
@@ -93,4 +93,28 @@
 
 .todo-container::-webkit-scrollbar-thumb {
   background: #6649b8;
+}
+
+.create-task-btn {
+  position: relative;
+  left: 73vw;
+  top: 17.5vh;
+}
+
+.create-btn {
+  padding: 5px 19px;
+  font-size: 3rem;
+  font-weight: bold;
+  border-radius: 50px;
+  border: 2px solid white;
+  transition: all 0.3s ease 0s;
+}
+
+.create-btn:hover {
+  border: 2px solid #482a5a;
+  background-color: #482a5a;
+  color: white;
+  padding: 9px 22px;
+  border-radius: 54px;
+  transition: all 0.3s ease 0s;
 }
