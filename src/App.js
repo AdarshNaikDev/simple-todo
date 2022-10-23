@@ -88,7 +88,7 @@ function App() {
           
           <img onClick={dropdownHandler} className="filter-icon" src={require('./asset/filter.png')}></img>
           
-          <h1 className="todo-title">Todo List</h1>
+          <h1 className="todo-title">Todo App</h1>
         </div>
         <div className="todo-container">
         <div className={dropdown? 'dropdown-visible': 'dropdown-invisible'}>
