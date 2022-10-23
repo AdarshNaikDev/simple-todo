@@ -77,7 +77,9 @@ function App() {
           </div>
         </>
       ) : null}
-      <div className="end-credits">Built with ☕ and 💻 By Adarsh Naik ❤️</div>
+      <div className="end-credits">
+        Built with ☕ and 💻 By <a href="">Adarsh Naik</a> ❤️
+      </div>
     </>
   );
 }
