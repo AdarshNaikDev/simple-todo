@@ -37,19 +37,25 @@ function App() {
 
   return (
     <>
-      <div className="main-content">
-        <h1 className="todo-title">Simple Todo List</h1>
+      <div className="main-container">
+        <div className="todo-title-container">
+          <h1 className="todo-title">Todo List</h1>
+        </div>
+        <div className="todo-container">
+          <TodoList
+            todos={todos}
+            setTodos={setTodos}
+            filteredTodos={filteredTodos}
+          />
+        </div>
+      </div>
+      <div className="form-container">
         <Form
           setInputText={setInputText}
           todos={todos}
           setTodos={setTodos}
           inputText={inputText}
           setStatus={setStatus}
-        />
-        <TodoList
-          todos={todos}
-          setTodos={setTodos}
-          filteredTodos={filteredTodos}
         />
       </div>
     </>
