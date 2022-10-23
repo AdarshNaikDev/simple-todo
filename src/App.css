@@ -146,10 +146,43 @@
 .end-credits {
   position: absolute;
   top: 90%;
-  left: 43%;
+  left: 39%;
   font-weight: 500;
 }
 
 a {
   text-decoration: none;
+}
+
+.filter-icon{
+  width:33px;
+  position: relative;
+  right: 30%;
+  padding-top: 2%;
+  
+  
+}
+
+.dropdown-visible{
+
+  display: block;
+
+}
+
+.dropdown-invisible{
+  display: none;
+}
+
+.dropdown-visible a{
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 7px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+
+}
+
+.dropdown-visible a:hover {
+  background-color: #d4d1d1;
+
 }

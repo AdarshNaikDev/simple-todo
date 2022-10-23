@@ -10,6 +10,7 @@ function App() {
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
   const [addTask, setAddTask] = useState(null);
+  const [dropdown, setDropdown] = useState(false)
 
   useEffect(() => {
     console.log("to get from local storage");
@@ -38,6 +39,8 @@ function App() {
     }
   };
   const filterHandler = () => {
+    console.log("file handler execution started")
+    console.log("in filehandler", status)
     switch (status) {
       case "completed":
         setFilteredTodos(todos.filter((todo) => todo.completed === true));
@@ -64,13 +67,35 @@ function App() {
     setAddTask(true);
   };
 
+  const updateStatus = (e)=>{
+    console.log(e.target.id)
+    setStatus(e.target.id)
+    setDropdown(false)
+    filterHandler();
+  }
+
+  function dropdownHandler (){
+
+    setDropdown(!dropdown)
+  }
+
   return (
     <>
       <div className="main-container">
         <div className="todo-title-container">
+
+          
+          
+          <img onClick={dropdownHandler} className="filter-icon" src={require('./asset/filter.png')}></img>
+          
           <h1 className="todo-title">Todo List</h1>
         </div>
         <div className="todo-container">
+        <div className={dropdown? 'dropdown-visible': 'dropdown-invisible'}>
+            <a href="#"  id="all" onClick={updateStatus}>All Todo's</a>
+            <a href="#" id="completed" onClick={updateStatus}>Completed Todo's</a>
+            <a href="#" id="incomplete" onClick={updateStatus}>Incomplete Todo's</a>
+          </div>
           <TodoList
             todos={todos}
             setTodos={setTodos}
