@@ -1,10 +1,11 @@
 import React from 'react'
 
-const Form = ({setInputText, todos, setTodos, inputText})=>{
+const Form = ({setInputText, todos, setTodos, inputText, setStatus})=>{
 
     const inputTextHandler =(e)=>{
-        console.log(e.target.value)
+       
         setInputText(e.target.value)
+        
         
     }
 
@@ -19,13 +20,18 @@ const Form = ({setInputText, todos, setTodos, inputText})=>{
 
     }
 
+    const statusHandler = (e)=>{
+        //console.log(e.target.value)
+        setStatus(e.target.value)
+    }
+
     return(
         <>
             <form >
                 <textarea rows={10} cols={20} value={inputText} onChange={inputTextHandler} placeholder="add a note"/>
                 <button type='submit' onClick={submitTodoHandler}>Add</button>
                 <div >
-                <select>
+                <select onChange={statusHandler}>
                     <option value="all">All</option>
                     <option value= "completed">Completed</option>
                     <option value="incomplete">InComplete</option>
