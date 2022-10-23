@@ -1,0 +1,76 @@
+.todo-content {
+    padding: 15px 10px;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: aliceblue;
+    font-size: 1rem;
+    height: auto;
+}
+
+.check {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    transition: 0.10s;
+    background-color: #FE0006;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    border-radius: 3px;
+    outline: none;
+}
+
+.check:checked {
+    background-color: #0E9700;
+}
+
+.check:before {
+    content: "✖";
+}
+
+.check:checked:before {
+    content: "✔";
+}
+
+.check:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.done-check {
+    background-color: red;
+}
+
+.todo-text {
+    margin-left: 20px;
+    width: 85%;
+    overflow-wrap: break-word;
+}
+
+.todo-text span {
+    width: inherit;
+}
+
+.delete-btn {
+    margin-left: 20px;
+}
+
+.delete-btn button {
+    border: none;
+    background-color: transparent;
+}
+
+.delete-btn button:hover img {
+    border: none;
+    background-color: transparent;
+    z-index: 10000;
+    width: 25px;
+}
+
+.delete-btn button img {
+    width: 20px;
+}

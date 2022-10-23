@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Form from "./Components/Form";
-import TodoList from "./Components/TodoList";
+import Form from "./Components/Form/Form";
+import TodoList from "./Components/TodoList/TodoList";
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -9,6 +9,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
+  const [addTask, setAddTask] = useState(null);
 
   useEffect(() => {
     filterHandler();
@@ -35,6 +36,10 @@ function App() {
     }
   };
 
+  const onAddTask = () => {
+    setAddTask(true);
+  };
+
   return (
     <>
       <div className="main-container">
@@ -50,17 +55,22 @@ function App() {
         </div>
       </div>
       <span className="create-task-btn">
-        <button className="create-btn">+</button>
+        <button className="create-btn" onClick={onAddTask}>
+          +
+        </button>
       </span>
-      <div className="form-container">
-        <Form
-          setInputText={setInputText}
-          todos={todos}
-          setTodos={setTodos}
-          inputText={inputText}
-          setStatus={setStatus}
-        />
-      </div>
+      {addTask ? (
+        <div className="form-container">
+          <Form
+            setInputText={setInputText}
+            todos={todos}
+            setTodos={setTodos}
+            inputText={inputText}
+            setStatus={setStatus}
+            addTask={setAddTask}
+          />
+        </div>
+      ) : null}
     </>
   );
 }

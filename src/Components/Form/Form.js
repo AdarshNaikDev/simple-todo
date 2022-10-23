@@ -1,17 +1,24 @@
 import React from "react";
 
-const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
+const Form = ({
+  setInputText,
+  todos,
+  setTodos,
+  inputText,
+  setStatus,
+  addTask,
+}) => {
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
   };
 
   const submitTodoHandler = (e) => {
     e.preventDefault();
+    addTask(false);
     setTodos([
       ...todos,
       { text: inputText, completed: false, id: Math.random() * 1000 },
     ]);
-    console.log("print the array", todos);
     setInputText("");
   };
 

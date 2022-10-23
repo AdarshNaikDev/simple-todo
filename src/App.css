@@ -64,7 +64,7 @@
   border-radius: 20px 20px 0px 0px;
 
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
 
   display: flex;
@@ -79,9 +79,7 @@
   overflow-x: hidden;
 }
 
-.form-container {
-  display: none;
-}
+/* .form-container {} */
 
 .todo-container::-webkit-scrollbar {
   width: 0.5rem;
