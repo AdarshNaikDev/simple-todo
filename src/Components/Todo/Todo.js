@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Todo/todo.css";
 
 const Todo = ({ idNo, text, ts, todo, todos, setTodos }) => {
   const [checked, setChecked] = useState(false);
+
+  useEffect(() => {
+    todo.completed ? setChecked(true) : setChecked(false);
+  }, []);
 
   function deleteHandler() {
     console.log(todo);
     setTodos(todos.filter((el) => el.id !== todo.id));
   }
   function completeHandler() {
-    var checked = true;
     setTodos(
       todos.map((item) => {
         if (item.id === todo.id) {
