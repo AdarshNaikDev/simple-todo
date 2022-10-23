@@ -60,16 +60,22 @@ function App() {
         </button>
       </span>
       {addTask ? (
-        <div className="form-container">
-          <Form
-            setInputText={setInputText}
-            todos={todos}
-            setTodos={setTodos}
-            inputText={inputText}
-            setStatus={setStatus}
-            addTask={setAddTask}
-          />
-        </div>
+        <>
+          <div className="form-container">
+            <div className="backdrop">
+              <div className="alert-box">
+                <Form
+                  setInputText={setInputText}
+                  todos={todos}
+                  setTodos={setTodos}
+                  inputText={inputText}
+                  setStatus={setStatus}
+                  addTask={setAddTask}
+                />
+              </div>
+            </div>
+          </div>
+        </>
       ) : null}
     </>
   );

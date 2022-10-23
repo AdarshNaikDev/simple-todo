@@ -9,6 +9,12 @@
     background-color: aliceblue;
     font-size: 1rem;
     height: auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 15px #c5c4c4, -2px -2px 15px #ffffff;
+}
+
+.todo-content:hover {
+    box-shadow: 2px 2px 15px #ffffff, -2px -2px 15px #c5c4c4;
 }
 
 .check {
@@ -41,9 +47,6 @@
     opacity: 0.8;
 }
 
-.done-check {
-    background-color: red;
-}
 
 .todo-text {
     margin-left: 20px;
