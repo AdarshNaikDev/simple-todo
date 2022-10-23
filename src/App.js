@@ -31,7 +31,7 @@ function App() {
 
   return (
     <>
-      <h1>
+      <h1 className='todo-title'>
         Simple Todo List
       </h1>
       <Form setInputText={setInputText} todos={todos} setTodos={setTodos} inputText={inputText} setStatus={setStatus}/>
