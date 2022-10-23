@@ -11,30 +11,52 @@ function App() {
   const [filteredTodos, setFilteredTodos] = useState([]);
   const [addTask, setAddTask] = useState(null);
 
-  useEffect(() => {
+
+  useEffect(()=>{
+    console.log("to get from local storage")
+      getLocalTodos();
+  },[]);
+
+  useEffect(()=>{
+    console.log("hey")
     filterHandler();
-  }, [todos, status]);
-  const filterHandler = () => {
-    switch (status) {
-      case "completed":
-        setFilteredTodos(todos.filter((todo) => todo.completed === true));
-        break;
-      case "incomplete":
-        setFilteredTodos(todos.filter((todo) => todo.completed === false));
-        break;
-      default:
-        setFilteredTodos(() => {
-          for (let i = 0; i < todos.length; i++) {
-            if (todos[i].completed === true) {
-              todos.push(todos[i]);
-              todos.splice(i, 1);
-            }
-          }
-          return todos;
-        });
-        break;
+    saveLocalTodos();
+  },[todos,status])
+
+ 
+
+  const saveLocalTodos=()=>{
+    localStorage.setItem("todos",JSON.stringify(todos))
+  }
+
+  const getLocalTodos = ()=>{
+    if(localStorage.getItem("todos") === null)
+    {
+      console.log("setitem run agtha ide")
+      localStorage.setItem("todos", JSON.stringify([]))
     }
-  };
+    else
+    { 
+      console.log("parse hatra banthu")
+      let todoListFromLocal = JSON.parse(localStorage.getItem('todos'));
+      console.log("local stoarage",todoListFromLocal)
+      setTodos(todoListFromLocal)
+    }
+  }
+  const filterHandler = ()=>{
+   switch (status){
+    case "completed":
+      setFilteredTodos(todos.filter((todo)=> todo.completed === true))
+      break;
+    case "incomplete":
+      setFilteredTodos(todos.filter((todo)=>todo.completed === false))
+      break;
+    default:
+      setFilteredTodos(todos)
+      break;
+   }
+    
+  }
 
   const onAddTask = () => {
     setAddTask(true);
